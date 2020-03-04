@@ -18,6 +18,8 @@ jobs:
         with:
           source: src
           target: build
+          filesAsDirs: true
+          ignore: "*.json,*.scss"
       
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.2.1
