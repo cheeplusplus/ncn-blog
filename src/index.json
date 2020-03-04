@@ -1,0 +1,74 @@
+{
+    "posts": [
+        {
+            "title": "New Blog Site",
+            "date": "March 3, 2020",
+            "link": "2020-03-03-new-blog"
+        },
+        {
+            "title": "The Muftec Fabricator",
+            "date": "July 28, 2014",
+            "link": "2014-07-28-the-muftec-fabricator"
+        },
+        {
+            "title": "Progress Slowed",
+            "date": "Jan 6, 2014",
+            "link": "2014-01-06-progress-slowed"
+        },
+        {
+            "title": "Ask: Airplane Mode Intercept",
+            "date": "Nov 11, 2013",
+            "link": "2013-11-11-ask"
+        },
+        {
+            "title": "Ask: Groompbot",
+            "date": "Aug 8, 2013",
+            "link": "2013-08-08-ask"
+        },
+        {
+            "title": "MyConbook iOS",
+            "date": "Mar 4, 2013",
+            "link": "2013-03-04-myconbook-ios"
+        },
+        {
+            "title": "Trello",
+            "date": "Nov 3, 2012",
+            "link": "2012-11-03-trello"
+        },
+        {
+            "title": "The Upgrade to Tablets",
+            "date": "Nov 2, 2012",
+            "link": "2012-11-02-the-upgrade-to-tablets"
+        },
+        {
+            "title": "Muftec",
+            "date": "Nov 1, 2012",
+            "link": "2012-11-01-muftec"
+        },
+        {
+            "title": "Okay, One Last Post",
+            "date": "Sep 8, 2012",
+            "link": "2012-09-08-one-last-post"
+        },
+        {
+            "title": "Git That Git",
+            "date": "Sep 8, 2012",
+            "link": "2012-09-08-git-that-git"
+        },
+        {
+            "title": "Progress for Sep. 8",
+            "date": "Sep 8, 2012",
+            "link": "2012-09-06-progress"
+        },
+        {
+            "title": "MyConbook",
+            "date": "Sep 6, 2012",
+            "link": "2012-09-06-myconbook"
+        },
+        {
+            "title": "The Jess and Coding Blog",
+            "date": "Sep 6, 2012",
+            "link": "2012-09-06-the-jess-and-coding-blog"
+        }
+    ]
+}

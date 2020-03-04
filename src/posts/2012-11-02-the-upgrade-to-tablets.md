@@ -1,0 +1,20 @@
+---
+title: The Upgrade to Tablets
+tags: MyConbook,UI
+date: November 2, 2012
+---
+It’s been a long while, unfortunately with no progress on the iOS version of MyConbook. But, after Google released their [Tablet App Quality Checklist](https://developer.android.com/docs/quality-guidelines/tablet-app-quality) I figured it was time to do what I had thought about starting around June, and implement a tablet UI for MyConbook for Android.
+
+When Android released Honeycomb (version 3.0), they added a UI concept called [Fragments](https://developer.android.com/guide/components/fragments.html). Fragments are these neat, versatile elements in Android because they can be used in a number of ways - from simply being an entire Activity, to being a portion of an Activity, to just being a code block with a lifecycle. Fragments are simply classes that can be added to a layout (a view is actually optional), so this way you can have independent UI pieces in play at once.
+
+I’ll get into Fragments themselves more at another time. For MyConbook specifically, a bit of a task had to be undertaken. I figured the best way to display the UI for tablets would be to have two split (~30%/70%) panes when a tablet device is landscape. This would usually involve a list on the left side, and a details view on the right, though this wouldn’t always be the case.
+
+So to start, this meant I had to convert all of my existing Activities to Fragments. This isn’t too hard, but there are special things you have to pay attention to in the activity lifecycle that are different for fragments. You can get away with leaving them alone if it’s the only thing being called, but when you start to get into reuse you have to make sure your UI is being built in onCreateView instead of onCreate, for example. Converting most of the elements wasn’t too difficult, especially as many of them were already at least FragmentActivities, since MyConbook uses ActionBarSherlock.
+
+Turning existing UI elements into fragments is one thing, displaying them at the same time is another. Normally, from one activity, you would simply start an Intent to display another activity, and pass along the arguments to be displayed. However, if you’re showing more than one fragment on the screen, the changing fragment needs to be created and informed via the parent activity. So, you would enter an “activity” like the schedule, and it would initiate the day select list in the left side fragment. Tapping one of these elements would normally create another activity, but in this case we want to show another fragment on the right, so the fragment code is created and the message for which day was chosen is passed along by a function, instead.
+
+Creating and message passing by a parent gives us an advantage. Due to the way Android handles view layouts, if we’re not on a large screen in landscape view, the right side fragment container will not be inflated. So we can tell at runtime that it is not there, and instead replace the existing “left side” container (the only one, on any other size/orientation) with the new fragment. Fragments have automatic back-stacking, so we can pop it off and go backwards automatically without having to manage it.
+
+I’ve implemented this for a few of the activities, and it seems to work rather well on both phones and tablets. Overall, however, I’d like to move to having one activity where the “action” is simply determed by a dropdown in the ActionBar instead, and never change layout away from that default split mode unless rotating the screen. This would be a little more complicated (I haven’t gotten menus in the Action Bar working yet, as is, for example) but with properly designed code it should be easy for this single activity to initialize an “action” and allow each action to handle its own tasks as is.
+
+Right now I don’t have much in the way of pictures to help this make more sense, but once I’m closer to being done I’ll try and add some code snippets to make sense of it. Moving to Fragments and a split UI has been rather intimidating to me, since it requires a lot more code than plain activities do, but after a point it just starts to click.

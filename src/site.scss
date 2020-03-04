@@ -1,0 +1,61 @@
+header div.title-container {
+  background-image: url("images/DSC_0756_s.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 14em;
+
+  h1,
+  h2 {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+
+    &.blog-title {
+      position: absolute;
+      top: 0.5em;
+      left: 1.5em;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    &.page-title {
+      position: absolute;
+      bottom: 0.5em;
+      right: 1.5em;
+    }
+  }
+}
+
+article {
+  div.container {
+    background-color: white;
+  }
+
+  .postdate {
+    color: #666666;
+  }
+
+  .article-content {
+    .highlight {
+      background-color: #cccccc;
+      padding: 0.5em;
+    }
+  }
+}
+
+footer div.container {
+  background-color: white;
+}
+
+.background-layer {
+  background-image: url("images/DSC_0746_s.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -100;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#250855"/>
+        <base href="{{path_to_root}}">
+        <title>{{title}}</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="site.css">
+        <link rel="icon" type="image/png" href="images/app_icon.png">
+
+        <meta name="description" content="{{ description | d("Jess And Coding blog") }}">
+        <meta name="og:site_name" content="Jess and Coding">
+        {% if title %}<meta name="og:title" content="{{title}}">{% endif %}
+        {% if description %}<meta name="og:description" content="{{ description }}">{% endif %}
+
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="col">
+                            <div class="title-container">
+                                <h1 class="blog-title"><a href=".">Jess &<br>Coding</a></h1>
+                                <h2 class="page-title">{{ title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <article>
+                <div class="container">
+                    {% if date %}
+                        <div class="col py-3 px-5 postdate text-right">Posted {{ date }}</div>
+                    {% endif -%}
+                    <div class="row">
+                        <div class="col py-3 px-5 article-content">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <div class="container mt-5">
+                    <div class="row p-3">
+                        <div class="col">
+                            Blog post text end stuff goes here
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+            <div class="background-layer"></div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
