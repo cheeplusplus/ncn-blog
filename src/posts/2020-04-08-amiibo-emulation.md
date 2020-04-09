@@ -43,4 +43,17 @@ It's still very finnicky, I think it's a mix of the NFC pad on the Pro Controlle
 
 If you're interested, I published my patch to [a branch in my own Proxmark fork](https://github.com/cheeplusplus/proxmark3). I may help contribute upstream but given that I just hardcoded to get this to work I don't want to rush into a pull request.
 
+There's not much to it. After building Proxmark and flashing the image, start by converting an amiibo dump into the emulation format:
+
+```
+perl tools/pm3_amii_bin2eml.pl whatever_amiibo.bin > amiibo.eml
+```
+
+then start Proxmark, load the eml file, and start the simulator.
+
+```
+hf mfu eload u amiibo 257
+hf mfu sim t 7
+```
+
 Now if you'll excuse me, I'm going to go fill my campsite with villagers I actually want.
