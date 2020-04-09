@@ -1,5 +1,5 @@
 ---
-title: New Blog Site
+title: Amiibo Emulation
 tags: emulation,hardware,hacking
 date: April 8, 2020
 ---
