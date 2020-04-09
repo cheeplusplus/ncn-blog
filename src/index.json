@@ -1,6 +1,11 @@
 {
     "posts": [
         {
+            "title": "Amiibo Emulation",
+            "date": "April 8, 2020",
+            "link": "2020-04-08-amiibo-emulation"
+        },
+        {
             "title": "New Blog Site",
             "date": "March 3, 2020",
             "link": "2020-03-03-new-blog"
